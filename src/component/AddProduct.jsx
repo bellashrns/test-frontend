@@ -9,7 +9,7 @@ const AddProduct = () => {
 
   const saveProduct = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/products", {
+    await axios.post("https://test-backend-production-80b1.up.railway.app/products", {
       name: name,
       price: parseInt(price),
     });

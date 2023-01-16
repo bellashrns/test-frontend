@@ -7,7 +7,7 @@ const ProductList = () => {
   const { mutate } = useSWRConfig();
 
   const fetcher = async () => {
-    const response = await axios.get("http://localhost:5000/products");
+    const response = await axios.get("https://test-backend-production-80b1.up.railway.app/products");
     return response.data;
   };
 
@@ -15,7 +15,7 @@ const ProductList = () => {
   if (!data) return <h1>Loading...</h1>;
 
   const deleteProduct = async (id) => {
-    await axios.delete(`http://localhost:5000/products/${id}`);
+    await axios.delete(`https://test-backend-production-80b1.up.railway.app/products/${id}`);
     mutate("products");
   };
 

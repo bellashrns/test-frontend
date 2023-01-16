@@ -10,7 +10,7 @@ const EditProduct = () => {
 
   const updateProduct = async (e) => {
     e.preventDefault();
-    await axios.patch(`http://localhost:5000/products/${id}`, {
+    await axios.patch(`https://test-backend-production-80b1.up.railway.app/products/${id}`, {
       name: name,
       price: parseInt(price),
     });
@@ -20,7 +20,7 @@ const EditProduct = () => {
   useEffect(() => {
     const getProductById = async () => {
       const response = await axios.get(
-        `http://localhost:5000/products/${id}`
+        `https://test-backend-production-80b1.up.railway.app/products/${id}`
       );
       setName(response.data.name);
       setPrice(response.data.price);
